@@ -1,0 +1,73 @@
+# The R script xegaDiag.R
+
+The directory xegaDiag contains the implementation 
+of printing/plotting functions for the package xegaX  
+for simple genetic algorithms.
+
+The easiest installation is by using install.packages from R.
+
+1. Linux:
+Start R in the directory where you have stored xegaDiag_0.0.0.1.tar.gz
+
+> install.packages("xegaDiag_0.0.0.1.tar.gz")
+
+1. Windows:
+Start R in the directory where you have stored envRealFunctions_0.0.0.1.zip
+
+> install.packages("xegaDiag_0.0.0.1.zip")
+
+The R script xegaDiag.R generates
+
+1. the man pages of the package.
+2. the pdf documentation of the package.
+3. the compilation and installation of the package.
+   (You  must adapt the variables path and pName
+    in the script xegaDiag.R:
+
+    path<-"~/dev/iaa/genetic/xega/"
+    pName<-"xegaDiag"
+
+    to the directory where you copy the package.
+
+You need to install the R-package devtools for this R script.
+
+There are two ways to use the code:
+
+1. Change into the R directory which contains the code, start R and load all code files:
+
+source("xegaDiag.R")
+
+Note that the package xegaDiag provides 
+diagnostic printing/plotting functions for the xega family of packages for 
+genetic algorithms.
+
+Use the pdf-Manual! 
+
+2. Adapt the path in xegaDiag.R and install the library xegaDiag:
+
+Rscript xegaDiag.R
+
+Restart R and
+
+library(xegaDiag)
+
+You get all elements of the package by
+
+xegaDiag::
+
+and pressing the tabulator.
+
+You get the man page by e.g 
+
+?xegaPlotStats
+
+or 
+
+help(xegaPlotStats)
+
+All examples given on a man page can be executed by
+
+example(xegaPlotStats)
+
+Note that man pages and examples are only available, if you install 
+the package as a library.

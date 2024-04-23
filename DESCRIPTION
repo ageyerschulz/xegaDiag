@@ -1,0 +1,27 @@
+Package: xegaDiag 
+Title: Diagnostics for Genetic and Evolutionary Algorithms
+Version: 0.0.1.0
+Authors@R: 
+    person(given = "Andreas",
+           family = "Geyer-Schulz",
+           role = c("aut", "cre"),
+           email = "Andreas.Geyer-Schulz@kit.edu",
+           comment = c(ORCID = "0009-0000-5237-3579"))
+Description: Print and plot functions for genetic and evolutionary algorithms
+             and selected problem environments support the visualization of
+             the solutions found by genetic or evolutionary algorithms as well 
+             as 1-D and 2-D projections of k-dimensional real functions.
+             In addition, a plot of the development of 
+             the population statistics of an algorithm run as well as 
+             the printing of time profiles of the main algorithm components
+             and their comparison are provided for the convenience of the 
+             user.  
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: false
+RoxygenNote: 7.2.3
+Suggests: testthat (>= 3.0.0),
+Imports:
+	xega,
+        graphics,
+        grDevices
