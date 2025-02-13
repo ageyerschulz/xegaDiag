@@ -26,5 +26,4 @@
 #' @section Installation: TBD
 #' @keywords genetic algorithms 
 #' @keywords diagnostic functions
-NULL
-
+"_PACKAGE"
