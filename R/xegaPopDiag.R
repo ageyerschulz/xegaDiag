@@ -51,6 +51,7 @@ xegaPlotPopStats<-function(xegaResult, epsfile=FALSE, filename=NULL, description
 
 	name<-unlist(xegaResult$solution$name)
         best<-xegaResult$solution$phenotypeValue
+        generation<-nrow(xegaResult$popStat)
         if (xegaResult$GAenv$max) {max<-"Maximize"} else {max<-"Minimize"}
 
 if (epsfile) 
@@ -93,7 +94,8 @@ mtext(tv, col=cv, at=pv)
 # mtext("Median ", at=29, col="grey")
 # mtext("Q3 ....", at=38, col="blue")
 # mtext("Max ---", at=48, col="black")
-title(paste(max," Population Fitness:", name, best, sep=" "))
+title(paste(max,"Population Fitness:", name, "Best:", best,  
+                "Generation:", generation, sep=" "))
 
 if (epsfile) 
 {
@@ -121,7 +123,7 @@ xegaTracePop<-function(path=".", s=30)
 while(0==0)
 {
 fn<-file.path(path, "xegaAnyTimeResult.rds")
-a<-readRDS(fn)
+try(a<-readRDS(fn), FALSE)
 xegaPlotPopStats(a)
 Sys.sleep(s)
 }
