@@ -50,6 +50,7 @@ xegaPlotPopStats<-function(xegaResult, epsfile=FALSE, filename=NULL, description
 {
 
 	name<-unlist(xegaResult$solution$name)
+        best<-xegaResult$solution$phenotypeValue
         if (xegaResult$GAenv$max) {max<-"Maximize"} else {max<-"Minimize"}
 
 if (epsfile) 
@@ -92,7 +93,7 @@ mtext(tv, col=cv, at=pv)
 # mtext("Median ", at=29, col="grey")
 # mtext("Q3 ....", at=38, col="blue")
 # mtext("Max ---", at=48, col="black")
-title(paste(max," Population Fitness:", name, sep=" "))
+title(paste(max," Population Fitness:", name, best, sep=" "))
 
 if (epsfile) 
 {
@@ -100,5 +101,30 @@ if (epsfile)
 }
 
 rc<-0
+}
+
+#' Traces execution of xegaRun population statistics.
+#'
+#' @description Endless loop. Stop wit ctrl-c.
+#'
+#' @details May not work, if many processes compete for the CPU.
+#'              
+#'
+#' @param path   Path. Default: ".".
+#' @param s      Seconds to sleep.
+#'
+#' @return Invisible zero.
+#'
+#' @export
+xegaTracePop<-function(path=".", s=30)
+{
+while(0==0)
+{
+fn<-file.path(path, "xegaAnyTimeResult.rds")
+a<-readRDS(fn)
+xegaPlotPopStats(a)
+Sys.sleep(s)
+}
+invisible(0)
 }
 

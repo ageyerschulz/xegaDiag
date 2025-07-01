@@ -24,6 +24,4 @@
 #' @section License: MIT
 #' @section URL: TBD
 #' @section Installation: TBD
-#' @keywords genetic algorithms 
-#' @keywords diagnostic functions
 "_PACKAGE"
