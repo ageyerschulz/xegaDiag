@@ -121,11 +121,13 @@ rc<-0
 xegaTracePop<-function(path=".", s=30)
 {
 while(0==0)
-{
-fn<-file.path(path, "xegaAnyTimeResult.rds")
-try(a<-readRDS(fn), FALSE)
-xegaPlotPopStats(a)
-Sys.sleep(s)
+{ fn<-file.path(path, "xegaAnyTimeResult.rds")
+  if (file.exists(fn))
+     { try(a<-readRDS(fn), FALSE)
+       xegaPlotPopStats(a)}
+     else
+     { cat("Waiting for the first population ...\n") }
+   Sys.sleep(s)
 }
 invisible(0)
 }
