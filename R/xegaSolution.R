@@ -25,7 +25,7 @@ cat( opt[1+s$GAenv$max], " ", s$GAenv$penv$name(), "!\n")
 if (s$solution$numberOfSolutions>1)
 {cat(s$solution$numberOfSolutions, "solutions with equal fitness found.\n")}
 cat("Fitness:", s$solution$fitness, 
-    "f(Parameters):", s$solution$value$fit, "\n")
+    "f(Parameters):", s$solution$phenotypeValue, "\n")
 if ((s$GAenv$algorithm %in% c("sga", "sgde")) && 
     ("pnames" %in% names(s$GAenv$penv)))
       {
