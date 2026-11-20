@@ -112,16 +112,17 @@ rc<-0
 #' @details May not work, if many processes compete for the CPU.
 #'              
 #'
+#' @param pid    Process identifier. Default: 0.
 #' @param path   Path. Default: ".".
-#' @param s      Seconds to sleep.
+#' @param s      Seconds to sleep. Default: 30.
 #'
 #' @return Invisible zero.
 #'
 #' @export
-xegaTracePop<-function(path=".", s=30)
+xegaTracePop<-function(pid=0, path=".", s=30)
 {
 while(0==0)
-{ fn<-file.path(path, "xegaAnyTimeResult.rds")
+{ fn<-file.path(path, paste0("xegaAnyTimeResult", pid, ".rds"))
   if (file.exists(fn))
      { try(a<-readRDS(fn), FALSE)
        xegaPlotPopStats(a)}
